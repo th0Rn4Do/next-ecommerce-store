@@ -1,6 +1,7 @@
 import './globals.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import styles from './layout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,9 +18,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <Link href="/">Home</Link> <Link href="/about">about</Link>{' '}
-          <Link href="/paintings">paintings</Link>
+        <nav className={styles.navigator}>
+          <div className={styles.hyperlinks}>
+            <Link href="/">Home</Link>
+          </div>
+          <div className={styles.hyperlinks}>
+            <Link href="/about">about</Link>
+          </div>
+          <div className={styles.hyperlinks}>
+            <Link href="/paintings">paintings</Link>
+          </div>
         </nav>
         This is coming form the layout.js inside the app folder and this page is
         the "home" page (aka rootlayout).

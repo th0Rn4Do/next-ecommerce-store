@@ -1,0 +1,10 @@
+.paintingsarrangement {
+  background-color: transparent;
+  position: absolute; /* or fixed */
+  left: 25%;
+  padding: 50px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 276px);
+  grid-template-rows: repeat(3, 276px);
+}
