@@ -3,6 +3,7 @@ export const paintingNotFoundMetadata = {
   description: "Sorry can't find the page you are looking for..",
 };
 
+// a 404 error is an error on the page.
 export default function PaintingsNotFound() {
   return (
     <div>

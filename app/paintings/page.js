@@ -14,7 +14,9 @@ export default function PaintingsPage() {
       {paintings.map((painting) => {
         return (
           <div key={`painting-div-${painting.id}`}>
-            <Link href={`/paintings/${painting.id}`}>{painting.name}</Link>
+            <Link href={`/paintings/${painting.id}`}>
+              {painting.name} by {painting.artist}{' '}
+            </Link>
             <br />
             <Image
               src={`/images/${painting.name}.png`}

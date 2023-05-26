@@ -18,10 +18,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <nav>
-          <Link href="/">Home</Link> <Link href="/about">About</Link>{' '}
-          <Link href="/webshop">Webshop</Link>
+          <Link href="/">Home</Link> <Link href="/about">about</Link>{' '}
+          <Link href="/paintings">paintings</Link>
         </nav>
-        This is coming form the layout.js inside the app folder and this page is the "home" page (aka rootlayout).
+        This is coming form the layout.js inside the app folder and this page is
+        the "home" page (aka rootlayout).
         {children}
       </body>
     </html>

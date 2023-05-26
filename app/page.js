@@ -5,8 +5,8 @@ export default function HomePage() {
     <main>
       home
       <Image
-        src="/images/1_The_Wedding_at_Cana_-_Paolo_Veronese_-_Brooklyn_Bridge_-_poc_1.png"
-        alt="The Wedding at Cana - Paolo Veronese - Brooklyn Bridge - poc 1"
+        src="/images/No. 6 - 2023.png"
+        alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
         width="256"
         height="256"
       />
