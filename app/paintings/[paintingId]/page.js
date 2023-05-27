@@ -24,6 +24,7 @@ export default function SinglePaintingsPage({ params }) {
               src={`/images/${singlePainting.name}.png`}
               width={256}
               height={256}
+              alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
             />
           </div>
           <br />

@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <main>
       <div className={styles.headingAlignment}>
-        Welcome to the Artner & Artner art gallery!
+        Welcome to the Artner & Artner virtual art gallery!
       </div>
       <br />
       <br />
@@ -14,9 +14,9 @@ export default function HomePage() {
         <div className={styles.paintingFrame}>
           <Image
             src="/images/No. 1 - 2023.png"
-            alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
             width="256"
             height="256"
+            alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
           />
         </div>
       </section>

@@ -5,7 +5,7 @@ export const paintings = [
     artist: '"Dall-e Veronese"',
     scenery: 'Brooklyn Bridge NY',
     year: '2023',
-    price: '€ 1400',
+    price: 1739,
     slug: 'No._1_-_2023',
   },
   {
@@ -14,7 +14,7 @@ export const paintings = [
     artist: '"Dall-e Veronese"',
     scenery: 'Brooklyn Bridge NY',
     year: '2023',
-    price: '€ 1400',
+    price: 1739,
     slug: 'No._2_-_2023',
   },
   {
@@ -23,7 +23,7 @@ export const paintings = [
     artist: '"Dall-e Veronese"',
     scenery: 'Brooklyn Bridge NY',
     year: '2023',
-    price: '€ 1400',
+    price: 1739,
     slug: 'No._3_-_2023',
   },
   {
@@ -32,7 +32,7 @@ export const paintings = [
     artist: '"Dall-e Veronese"',
     scenery: 'Brooklyn Bridge NY',
     year: '2023',
-    price: '€ 1400',
+    price: 1739,
     slug: 'No._4_-_2023',
   },
   {
@@ -41,7 +41,7 @@ export const paintings = [
     artist: '"Dall-e Veronese"',
     scenery: 'Brooklyn Bridge NY',
     year: '2023',
-    price: '€ 1400',
+    price: 1739,
     slug: 'No._5_-_2023',
   },
 ];
