@@ -28,9 +28,10 @@ export default function RootLayout({ children }) {
           <div className={styles.hyperlinks}>
             <Link href="/paintings">paintings</Link>
           </div>
+          <div className={styles.hyperlinks}>
+            <Link href="/cart">cart</Link>
+          </div>
         </nav>
-        This is coming form the layout.js inside the app folder and this page is
-        the "home" page (aka rootlayout).
         {children}
       </body>
     </html>

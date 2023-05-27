@@ -12,7 +12,12 @@ export const metadata = {
 export default function AboutLayout({ children }) {
   return (
     <>
-      This is coming form the layout.js inside about folder and this page is the about page.
+      Who we are and what we do. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Praesent eget semper mi. Mauris rhoncus eu magna in
+      iaculis. Integer dictum nunc id commodo maximus. Integer in tristique sem.
+      Cras non leo non mi ultrices accumsan. Duis dignissim, mi vel venenatis
+      efficitur, nunc massa placerat orci, quis suscipit purus turpis sed dui.
+      Nam vestibulum lorem nec ultricies aliquet. Aliquam erat volutpat.
       {children}
     </>
   );

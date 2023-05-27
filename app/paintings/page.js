@@ -11,22 +11,24 @@ export const metadata = {
 export default function PaintingsPage() {
   return (
     <main>
-      <div className={styles.paintingsarrangement}>
+      <div className={styles.paintingsArrangement}>
         currently available paintings:
         {paintings.map((painting) => {
           return (
             <div key={`painting-div-${painting.id}`}>
               {/* <Link href={`/paintings/${painting.id}`}> */
               /* changed painting.id to painting.slug, so that instead of "id" the "title" will be shown in the URL  */}
-              <Link href={`/paintings/${painting.slug}`}>
-                {painting.name} by {painting.artist}{' '}
-              </Link>
-              <br />
-              <Image
-                src={`/images/${painting.name}.png`}
-                width={256}
-                height={256}
-              />
+              <div className={styles.paintingFrame}>
+                <Link href={`/paintings/${painting.id}`}>
+                  {painting.name} by {painting.artist}{' '}
+                </Link>
+                <br />
+                <Image
+                  src={`/images/${painting.name}.png`}
+                  width={256}
+                  height={256}
+                />
+              </div>
             </div>
           );
         })}
