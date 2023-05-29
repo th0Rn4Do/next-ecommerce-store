@@ -1,12 +1,11 @@
 import sjson from 'secure-json-parse';
 
-export const function parseJson(string) {
+export function parseJson(string) {
   if (!string) return undefined;
 
   try {
     return sjson(string);
-  }
-  catch {
+  } catch {
     return undefined;
   }
 }
