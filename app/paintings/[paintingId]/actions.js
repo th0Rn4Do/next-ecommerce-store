@@ -3,11 +3,11 @@ import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
 export async function createOrUpdateQuantity(paintingId, quantity) {
-  const paintingQuantityCookie = getCookie('cart');
+  const paintingQuantitiesCookie = getCookie('cart');
 
-  const paintingQuantities = !paintingQuantityCookie
+  const paintingQuantities = !paintingQuantitiesCookie
     ? []
-    : parseJson(paintingQuantityCookie);
+    : parseJson(paintingQuantitiesCookie);
 
   const paintingToUpdate = paintingQuantities.find((paintingQuantity) => {
     return paintingQuantity.id === paintingId;
@@ -22,4 +22,18 @@ export async function createOrUpdateQuantity(paintingId, quantity) {
     });
   }
   await cookies().set('cart', JSON.stringify(paintingQuantities));
+}
+
+export async function removePaintingfromCart(paintingId) {
+  const paintingQuantitiesCookie = getCookie('cart');
+
+  const paintingQuantities = !paintingQuantitiesCookie
+    ? []
+    : parseJson(paintingQuantitiesCookie);
+
+  const updatedQuantities = paintingQuantities.filter(
+    (painting) => painting.id !== paintingId,
+  );
+
+  await cookies().set('cart', JSON.stringify(updatedQuantities));
 }
