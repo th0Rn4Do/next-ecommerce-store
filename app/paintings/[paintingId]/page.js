@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getPaintingsById } from '../../../database/paintings';
+import { getCookie } from '../../../util/cookies';
+import { parseJson } from '../../../util/json';
 import styles from './layout.module.scss';
 
+getCookie;
+parseJson;
 export const dynamic = 'force-dynamic';
 
 export default function SinglePaintingsPage({ params }) {
@@ -34,7 +38,9 @@ export default function SinglePaintingsPage({ params }) {
           <br />
           year: {singlePainting.year}
           <br />
-          Price in €: {singlePainting.price}
+          <div data-test-id="product-price">
+            Price in €: {singlePainting.price}
+          </div>
         </div>
       </div>
     </main>

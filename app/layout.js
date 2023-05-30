@@ -27,7 +27,9 @@ export default function RootLayout({ children }) {
             <Link href="/about">about</Link>
           </div>
           <div className={styles.hyperlinks}>
-            <Link href="/paintings">paintings</Link>
+            <Link href="/paintings" data-test-id="products-link">
+              paintings
+            </Link>
           </div>
           <div className={styles.hyperlinks}>
             <Link href="/cart">cart</Link>

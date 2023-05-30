@@ -16,6 +16,7 @@ export default function HomePage() {
             src="/images/No. 1 - 2023.png"
             width="256"
             height="256"
+            data-test-id="product-image"
             alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
           />
         </div>
