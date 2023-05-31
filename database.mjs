@@ -1,11 +1,15 @@
+import { config } from 'dotenv-safe';
 import postgres from 'postgres';
 
-const sql = postgres(
-  'postgres://next_ecommerce_store:next_ecommerce_store@localhost:5432/database',
-);
+config();
+
+const sql = postgres();
 
 console.log(
   await sql`
     SELECT * FROM paintings;
   `,
 );
+
+// this line below is for used for testing only. It closes the database again and we can immediately continue typing in the terminal.
+await sql.end();
