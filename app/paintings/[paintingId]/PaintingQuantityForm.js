@@ -50,11 +50,11 @@ export default function PaintingQuantityForm(props) {
 
       <label>
         <input data-test-id="product-quantity" value={quantity} />
-        <button className={style.button} onClick={addQuantity}>
-          +
-        </button>
         <button className={style.button} onClick={deductQuantity}>
           -
+        </button>
+        <button className={style.button} onClick={addQuantity}>
+          +
         </button>
       </label>
 

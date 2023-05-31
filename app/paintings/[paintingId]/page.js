@@ -4,6 +4,7 @@ import { getPaintingsById } from '../../../database/paintings';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import styles from './layout.module.scss';
+import PaintingQuantityForm from './PaintingQuantityForm';
 
 getCookie;
 parseJson;
@@ -28,6 +29,7 @@ export default function SinglePaintingsPage({ params }) {
               src={`/images/${singlePainting.name}.png`}
               width={256}
               height={256}
+              data-test-id="product-image"
               alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
             />
           </div>
@@ -40,6 +42,9 @@ export default function SinglePaintingsPage({ params }) {
           <br />
           <div data-test-id="product-price">
             Price in €: {singlePainting.price}
+          </div>
+          <div>
+            <PaintingQuantityForm paintingId={singlePainting.id} />
           </div>
         </div>
       </div>
