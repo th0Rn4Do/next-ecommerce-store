@@ -8,6 +8,7 @@ import PaintingQuantityForm from './PaintingQuantityForm';
 
 getCookie;
 parseJson;
+
 export const dynamic = 'force-dynamic';
 
 export default function SinglePaintingsPage({ params }) {

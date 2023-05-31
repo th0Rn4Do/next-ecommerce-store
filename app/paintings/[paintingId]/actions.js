@@ -15,7 +15,7 @@ export async function createOrUpdateQuantity(paintingId, quantity) {
     return paintingQuantity.id === paintingId;
   });
 
-  if (paintingToUpdate) {
+  if (!paintingToUpdate) {
     paintingToUpdate.quantity = quantity;
   } else {
     paintingQuantities.push({
@@ -23,6 +23,10 @@ export async function createOrUpdateQuantity(paintingId, quantity) {
       quantity,
     });
   }
+  console.log(paintingQuantities);
+  console.log(paintingToUpdate);
+  console.log(paintingId);
+  console.log(quantity);
   await cookies().set('cart', JSON.stringify(paintingQuantities));
 }
 
@@ -36,6 +40,6 @@ export async function removePaintingfromCart(paintingId) {
   const updatedQuantities = paintingQuantities.filter(
     (painting) => painting.id !== paintingId,
   );
-
+  console.log(`Console.log from actions`, paintingQuantities);
   await cookies().set('cart', JSON.stringify(updatedQuantities));
 }

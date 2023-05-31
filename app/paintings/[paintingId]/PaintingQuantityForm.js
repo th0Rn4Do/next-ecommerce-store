@@ -63,7 +63,8 @@ export default function PaintingQuantityForm(props) {
           data-test-id="product-add-to-cart"
           formAction={async () => {
             router.refresh();
-            await createOrUpdateQuantity(props.productId, props.quantity);
+            await createOrUpdateQuantity(props.productId, quantity);
+            console.log(`Console.log from PaintingQuantityF..`, props);
           }}
         >
           Add to cart
