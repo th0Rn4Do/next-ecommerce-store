@@ -5,20 +5,40 @@ import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
 export async function createOrUpdateQuantity(paintingId, quantity) {
-  const paintingQuantitiesCookie = getCookie('cart');
+  // 1. get the current cookie
+  // This get the cookies from the Request Headers
+  const paintingQuantitiesCookie = getCookie('thePaintingQuantities');
 
+  // 2. we parse the cookie
   const paintingQuantities = !paintingQuantitiesCookie
-    ? []
+    ? // case A: cookie is undefined
+      // undefined
+      // we need to create the new array with the fruitCommnet inside
+      []
     : parseJson(paintingQuantitiesCookie);
 
-  const paintingToUpdate = paintingQuantities.find((paintingQuantity) => {
+  // 3. we edit the object
+
+  // We get the object for the fruit in cookies or undefined
+  const paintingToUpdate = paintingQuantities?.find((paintingQuantity) => {
     return paintingQuantity.id === paintingId;
   });
 
-  if (!paintingToUpdate) {
-    paintingToUpdate.quantity = quantity;
+  // case B: the cookie is defined but have the fruit in the action
+  // if we are in fruit 1
+  // [{id:1, comment:"abc"}]
+  if (paintingToUpdate) {
+    // we need to update the fruitComment
+    paintingToUpdate.quantity += quantity;
   } else {
+    // case C: the cookie is defined but doesn't have the fruit in the action
+    // if we are in fruit 1
+    // [{id:2, comment:"abc"}]
+    //
+    // WARNING: Be careful of using the exclamation mark
+    // Only use it if you know that you want the error!
     paintingQuantities.push({
+      // we need insert the fruitCommnet
       id: paintingId,
       quantity,
     });
@@ -27,11 +47,16 @@ export async function createOrUpdateQuantity(paintingId, quantity) {
   console.log(paintingToUpdate);
   console.log(paintingId);
   console.log(quantity);
-  await cookies().set('cart', JSON.stringify(paintingQuantities));
+  // 4. we override the cookie
+  // This set the cookies into the Response Headers
+  await cookies().set(
+    'thePaintingQuantities',
+    JSON.stringify([{ paintingQuantities, paintingId, quantity }]),
+  );
 }
 
 export async function removePaintingfromCart(paintingId) {
-  const paintingQuantitiesCookie = getCookie('cart');
+  const paintingQuantitiesCookie = getCookie('thePaintingQuantities');
 
   const paintingQuantities = !paintingQuantitiesCookie
     ? []
@@ -41,5 +66,8 @@ export async function removePaintingfromCart(paintingId) {
     (painting) => painting.id !== paintingId,
   );
   console.log(`Console.log from actions`, paintingQuantities);
-  await cookies().set('cart', JSON.stringify(updatedQuantities));
+  await cookies().set(
+    'thePaintingQuantities',
+    JSON.stringify(updatedQuantities),
+  );
 }

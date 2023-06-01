@@ -19,6 +19,7 @@
     "sharp": "^0.32.1"
   },
   "devDependencies": {
+    "@types/dotenv-safe": "^8.1.2",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "eslint-config-upleveled": "^4.5.0",

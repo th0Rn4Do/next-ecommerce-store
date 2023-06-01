@@ -22,6 +22,11 @@ export default function PaintingQuantityForm(props) {
     setQuantity(quantity - 1);
   }
 
+  // Use this when changing to typescript
+  /* function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    setComment(event.currentTarget.value);
+  */
+
   return (
     <>
       {/* WARNING: in order to use Server Action you need to update the next.js config with serverActions: true, */}
@@ -49,7 +54,13 @@ export default function PaintingQuantityForm(props) {
       */}
 
       <label>
-        <input data-test-id="product-quantity" value={quantity} />
+        <input
+          data-test-id="product-quantity"
+          value={quantity}
+          onChange={(event) => {
+            setQuantity(event.currentTarget.value);
+          }}
+        />
         <button className={style.button} onClick={deductQuantity}>
           -
         </button>
@@ -64,7 +75,10 @@ export default function PaintingQuantityForm(props) {
           formAction={async () => {
             router.refresh();
             await createOrUpdateQuantity(props.productId, quantity);
+
+            /* This console.log shows me what I want
             console.log(`Console.log from PaintingQuantityF..`, props);
+            */
           }}
         >
           Add to cart

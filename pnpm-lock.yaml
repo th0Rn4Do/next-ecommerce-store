@@ -31,6 +31,9 @@ dependencies:
     version: 0.32.1
 
 devDependencies:
+  '@types/dotenv-safe':
+    specifier: ^8.1.2
+    version: 8.1.2
   '@types/react':
     specifier: ^18.2.6
     version: 18.2.6
@@ -508,6 +511,12 @@ packages:
     dependencies:
       tslib: 2.5.0
     dev: false
+
+  /@types/dotenv-safe@8.1.2:
+    resolution: {integrity: sha512-R/B/wIMda6lRE2P1H0vwSoJsV78IOkhccE4vIvmKZQNXOIjiU0QyJsUXwSotBxOPZFZ/oOnjCa3+kK5kVJwGyw==}
+    dependencies:
+      dotenv: 8.6.0
+    dev: true
 
   /@types/eslint@8.37.0:
     resolution: {integrity: sha512-Piet7dG2JBuDIfohBngQ3rCt7MgO9xCO4xIMKxBThCq5PNRB91IjlJ10eJVwfoNtvTErmxLzwBZ7rHZtbOMmFQ==}
@@ -1255,7 +1264,6 @@ packages:
   /dotenv@8.6.0:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
-    dev: false
 
   /electron-to-chromium@1.4.397:
     resolution: {integrity: sha512-jwnPxhh350Q/aMatQia31KAIQdhEsYS0fFZ0BQQlN9tfvOEwShu6ZNwI4kL/xBabjcB/nTy6lSt17kNIluJZ8Q==}
