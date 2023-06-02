@@ -46,6 +46,6 @@ export const paintings = [
   },
 ];
 
-export function getPaintingsById(id) {
+export function getPaintingById(id) {
   return paintings.find((painting) => painting.id === id);
 }
