@@ -59,7 +59,7 @@ import styles from '../paintings/layout.module.scss';
 
 export default function PaintingsPage() {
   // This is what we want when using cookies
-  const paintingAmountsCookie = getCookie('paintingAmounts');
+  const paintingAmountsCookie = getCookie('cart');
 
   const paintingAmounts = !paintingAmountsCookie
     ? []

@@ -118,7 +118,7 @@ export default function PaintingsPage(props /* : Props */) {
     notFound();
   }
 
-  const paintingAmountCookie = getCookie('paintingAmounts');
+  const paintingAmountCookie = getCookie('cart');
   const paintingAmounts /* : Cookie[] */ = !paintingAmountCookie
     ? []
     : parseJson(paintingAmountCookie);
