@@ -8,7 +8,7 @@ import styles from '../paintings/layout.module.scss';
 
 export default function FruitsPage() {
   // This is what we want when using cookies
-  const fruitCommentsCookie = getCookie('fruitComments');
+  const fruitCommentsCookie = getCookie('fruitpaintingAmountsComments');
 
   const fruitComments = !fruitCommentsCookie
     ? []

@@ -27,7 +27,7 @@ export default function FruitPaintingsPagePage(props /* : Props */) {
     notFound();
   }
 
-  const fruitCommentsCookie = getCookie('fruitComments');
+  const fruitCommentsCookie = getCookie('fruitpaintingAmountsComments');
   const fruitComments /* : Cookie[] */ = !fruitCommentsCookie
     ? []
     : parseJson(fruitCommentsCookie);

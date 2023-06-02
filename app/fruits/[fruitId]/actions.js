@@ -4,23 +4,19 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
-export async function createOrUpdateComment(
-  fruitPaintingIdId,
-  comAmountment,
-) {
+export async function createOrUpdateComment(fruitPaintingIdId, comAmountment) {
   // 1. get the current cookie
   // This get the cookies from the Request Headers
   const fruitPaintingAmountsCookieCommentsCookie = getCookie(
     'fruitpaintingAmountsComments',
   );
   // 2. we parse the cookie
-  const fruitpaintingAmountsComments =
-    !fruitPaintingAmountsCookieCommentsCookie
-      ? // case A: cookie is undefined
-        // undefined
-        // we need to create the new array with the fruitCommnet inside
-        []
-      : parseJson(fruitPaintingAmountsCookieCommentsCookie);
+  const fruitpaintingAmountsComments = !fruitPaintingAmountsCookieCommentsCookie
+    ? // case A: cookie is undefined
+      // undefined
+      // we need to create the new array with the fruitCommnet inside
+      []
+    : parseJson(fruitPaintingAmountsCookieCommentsCookie);
 
   // 3. we edit the object
 

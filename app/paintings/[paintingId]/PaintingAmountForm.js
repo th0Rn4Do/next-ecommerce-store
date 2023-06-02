@@ -126,7 +126,7 @@ export default function PaintingAmountForm(props) {
         <button
           formAction={async () => {
             router.refresh();
-            await createOrUpdateAmount(props.fruitId, amount);
+            await createOrUpdateAmount(props.paintingId, amount);
           }}
         >
           Add to cart
