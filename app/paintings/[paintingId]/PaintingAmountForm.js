@@ -22,13 +22,7 @@ export default function PaintingAmountForm(props) {
     setAmount(amount - 1);
   }
 
-  // function handleChange(event: ChangeEvent<HTMLInputElement>) {
-  //   setAmount(JSON.parse(event.currentTarget.value));
-  // }
-
   return (
-    // WARNING: in order to use Server Action you need to update the next.js config with serverActions: true,
-    // when using Server Actions we don't need prevent the default of the form
     <>
       <label>
         <input
@@ -38,7 +32,7 @@ export default function PaintingAmountForm(props) {
             setAmount(event.currentTarget.value);
           }}
         />
-        {/* Instead of using onClick we use formAction */}
+
         <button className={styles.button} onClick={deductAmount}>
           -
         </button>
@@ -46,7 +40,7 @@ export default function PaintingAmountForm(props) {
           +
         </button>
       </label>
-      {/* Instead of using onClick we use formAction */}
+
       <br />
       <form>
         <button
