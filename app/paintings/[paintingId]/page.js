@@ -91,7 +91,8 @@ export default function SinglePaintingsPage({ params }) {
 
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getPaintingById } from '../../../database/paintings';
+import { getPaintingByIdSql } from '../../../database/paintings';
+// import { getPaintingById } from '../../../database/paintings';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import styles from './layout.module.scss';
@@ -110,11 +111,17 @@ type Cookie = {
 
 */
 
-export default function PaintingsPage(props /* : Props */) {
-  /* const frPaintinguit5645 = getFruitById(Number(props.params.paintingId)); */
-  const painting = getPaintingById(Number(props.params.paintingId));
+export default async function PaintingsPage(props /* : Props */) {
+  //  const paintingsSql = await getPaintingsSql();
+  const singlePainting = await getPaintingByIdSql(
+    Number(props.params.paintingId),
+  );
+  console.log('single: ', singlePainting);
 
-  if (!painting) {
+  /* const frPaintinguit5645 = getFruitById(Number(props.params.paintingId)); */
+  // const singlePainting = getPaintingById(Number(props.params.paintingId));
+
+  if (!singlePainting) {
     notFound();
   }
 
@@ -124,7 +131,7 @@ export default function PaintingsPage(props /* : Props */) {
     : parseJson(paintingAmountCookie);
 
   const paintingToUpdate = paintingAmounts.find((paintingAmount) => {
-    return paintingAmount.id === painting.id;
+    return paintingAmount.id === singlePainting.id;
   });
 
   return (
@@ -132,11 +139,11 @@ export default function PaintingsPage(props /* : Props */) {
       <main>
         <div>
           <div className={styles.singlePaintingPage}>
-            <h1>{`${painting.name}`}</h1>
+            <h1>{`${singlePainting.paintingName}`}</h1>
             <div className={styles.paintingFrame}>
               {paintingToUpdate?.quantity}
               <Image
-                src={`/images/${painting.name}.png`}
+                src={`/images/${singlePainting.paintingName}.png`}
                 width={256}
                 height={256}
                 data-test-id="product-image"
@@ -144,15 +151,17 @@ export default function PaintingsPage(props /* : Props */) {
               />
             </div>
             <br />
-            This painting is named: {painting.name}
+            This painting is named: {singlePainting.paintingName}
             <br />
-            artist: {painting.artist}
+            artist: {singlePainting.artistName}
             <br />
-            year: {painting.year}
+            year: {singlePainting.yearOfCreation}
             <br />
-            <div data-test-id="product-price">Price in €: {painting.price}</div>
+            <div data-test-id="product-price">
+              Price in €: {singlePainting.priceInEuros}
+            </div>
             <div>
-              <PaintingAmountForm paintingId={painting.id} />
+              <PaintingAmountForm paintingId={singlePainting.id} />
             </div>
           </div>
         </div>

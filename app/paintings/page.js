@@ -50,14 +50,19 @@ export default function PaintingsPage() {
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { paintings } from '../../database/paintings';
+import { getPaintingsSql } from '../../database/paintings';
+// import { paintings } from '../../database/paintings';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from '../paintings/layout.module.scss';
 
 // export const dynamic = 'force-dynamic';
 
-export default function PaintingsPage() {
+export default async function PaintingsPage() {
+  //  const paintingsSql = await getPaintingsSql();
+  const paintings = await getPaintingsSql();
+  // console.log('paintings: ', paintings);
+
   // This is what we want when using cookies
   const paintingAmountsCookie = getCookie('cart');
 
@@ -87,10 +92,10 @@ export default function PaintingsPage() {
                   href={`/paintings/${painting.id}`}
                   data-test-id="product-<product id>"
                 >
-                  {painting.name} by {painting.artist}{' '}
+                  {painting.paintingName} by {painting.artistName}{' '}
                 </Link>
                 <Image
-                  src={`/images/${painting.name}.png`}
+                  src={`/images/${painting.paintingName}.png`}
                   width={256}
                   height={256}
                   data-test-id="product-image"

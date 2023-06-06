@@ -1,9 +1,12 @@
 import Image from 'next/image';
-import { paintings } from '../../database/paintings';
+import { getPaintingsSql } from '../../database/paintings';
+// import { paintings } from '../../database/paintings';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-export default function CartPage() {
+export default async function CartPage() {
+  const paintings = await getPaintingsSql();
+  console.log('paintings: ', paintings);
   //   --- ich hol hier die cookies ---
   const paintingAmountCookie = getCookie('cart');
   const paintingAmounts = !paintingAmountCookie
