@@ -25,7 +25,7 @@ export default async function CartPage() {
 
   //   --- ich berechne den gesamtpreis mit reduce, 0 ist initialValue---
   const totalPrice = productsInCart.reduce(
-    (accumulator, item) => accumulator + item.price * item.quantity,
+    (accumulator, item) => accumulator + item.priceInEuros * item.quantity,
     0,
   );
 
@@ -36,13 +36,13 @@ export default async function CartPage() {
         {productsInCart.map((product) => {
           return (
             <div key={product.id}>
-              <h2>{product.name}</h2>
+              <h2>{product.paintingName}</h2>
               <Image
-                src={`/images/${product.name}.png`}
+                src={`/images/${product.paintingName}.png`}
                 width={200}
                 height={200}
               />
-              <p>Price: {product.price}$</p>
+              <p>Price: {product.priceInEuros}$</p>
               <p>Quantity: {product.quantity}</p>
             </div>
           );

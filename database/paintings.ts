@@ -83,7 +83,7 @@ export const getPaintingsSql = cache(async () => {
 
 export const getPaintingByIdSql = cache(async (id: number) => {
   // const onePaintingSql = await sql<Painting[]>`
-  const paintings = await sql<Painting[]>`
+  const [painting] = await sql<Painting[]>`
     SELECT
      *
     FROM
@@ -92,5 +92,5 @@ export const getPaintingByIdSql = cache(async (id: number) => {
       id = ${id}
   `;
   // return paintingsSql;
-  return paintings[0];
+  return painting;
 });

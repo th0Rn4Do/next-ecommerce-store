@@ -1,3 +1,12 @@
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { getPaintingByIdSql } from '../../../database/paintings';
+// import { getPaintingById } from '../../../database/paintings';
+import { getCookie } from '../../../util/cookies';
+import { parseJson } from '../../../util/json';
+import styles from './layout.module.scss';
+import PaintingAmountForm from './PaintingAmountForm';
+
 /*
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -88,15 +97,6 @@ export default function SinglePaintingsPage({ params }) {
 }
 
 */
-
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import { getPaintingByIdSql } from '../../../database/paintings';
-// import { getPaintingById } from '../../../database/paintings';
-import { getCookie } from '../../../util/cookies';
-import { parseJson } from '../../../util/json';
-import styles from './layout.module.scss';
-import PaintingAmountForm from './PaintingAmountForm';
 
 export const dynamic = 'force-dynamic';
 
