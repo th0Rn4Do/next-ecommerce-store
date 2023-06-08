@@ -1,5 +1,15 @@
 import { Sql } from 'postgres';
 
+export type Painting = {
+  id: number;
+  name: string;
+  artist: string;
+  scenery: string | null;
+  year: string;
+  price: number;
+  slug: string | null;
+};
+
 export async function up(sql: Sql) {
   await sql`
     CREATE TABLE paintings (
