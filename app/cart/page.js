@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getPaintingsSql } from '../../database/paintings';
 // import { paintings } from '../../database/paintings';
 import { getCookie } from '../../util/cookies';
@@ -49,6 +50,12 @@ export default async function CartPage() {
         })}
       </div>
       <h2>Total Price: {totalPrice}$</h2>
+      <Link href="/paintings" data-test-id="products-link">
+        Shop more
+      </Link>
+      <Link href="cart/checkout" data-test-id="products-link">
+        Checkout
+      </Link>
     </main>
   );
 }

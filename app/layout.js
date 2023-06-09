@@ -34,9 +34,10 @@ export default function RootLayout({ children }) {
           <div className={styles.hyperlinks}>
             <Link href="/cart">cart</Link>
           </div>
-         { /* <div className={styles.hyperlinks}>
+
+          {/* <div className={styles.hyperlinks}>
             <Link href="/fruits">fruits</Link>
-          </div> */ }
+          </div> */}
         </nav>
         <CookieBanner />
         {children}

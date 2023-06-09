@@ -141,7 +141,7 @@ export default async function PaintingsPage(props /* : Props */) {
           <div className={styles.singlePaintingPage}>
             <h1>{`${singlePainting.paintingName}`}</h1>
             <div className={styles.paintingFrame}>
-              {paintingToUpdate?.quantity}
+              {/* {paintingToUpdate?.quantity} */}
               <Image
                 src={`/images/${singlePainting.paintingName}.png`}
                 width={256}
@@ -162,6 +162,10 @@ export default async function PaintingsPage(props /* : Props */) {
             </div>
             <div>
               <PaintingAmountForm paintingId={singlePainting.id} />
+            </div>
+            <div>
+              Number of copies of this item in your cart:{' '}
+              {paintingToUpdate?.quantity}{' '}
             </div>
           </div>
         </div>
