@@ -4,6 +4,7 @@ import { getPaintingsSql } from '../../database/paintings';
 // import { paintings } from '../../database/paintings';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import styles from './page.module.scss';
 
 export default async function CartPage() {
   const paintings = await getPaintingsSql();
@@ -32,30 +33,47 @@ export default async function CartPage() {
 
   return (
     <main>
-      <h1>Cart</h1>
-      <div>
-        {productsInCart.map((product) => {
-          return (
-            <div key={product.id}>
-              <h2>{product.paintingName}</h2>
-              <Image
-                src={`/images/${product.paintingName}.png`}
-                width={200}
-                height={200}
-              />
-              <p>Price: {product.priceInEuros}$</p>
-              <p>Quantity: {product.quantity}</p>
-            </div>
-          );
-        })}
+      <div className={styles.itemsincartdiv}>
+        <h1>Your cart</h1>
+        <br />
+        <br />
+        <div>
+          {productsInCart.map((product) => {
+            return (
+              <div key={product.id}>
+                <section className={styles.itemframe}>
+                  <div>
+                    <h2>{product.paintingName}</h2>
+                    <Image
+                      src={`/images/${product.paintingName}.png`}
+                      width={200}
+                      height={200}
+                    />
+                  </div>
+                  <div className={styles.priceandquantitydiv}>
+                    <p>Price: {product.priceInEuros}$</p>
+                    <br />
+                    <p>Quantity: {product.quantity}</p>
+                  </div>
+                </section>
+              </div>
+            );
+          })}
+        </div>
+        <h2>Total Price: {totalPrice}$</h2>
+        <div className={styles.shoppingcartbuttonsorientation}>
+        <div className={styles.shoppingcartbuttons}>
+          <Link href="/paintings" data-test-id="products-link">
+            Shop more
+          </Link>
+        </div>
+        <div className={styles.shoppingcartbuttons}>
+          <Link href="cart/checkout" data-test-id="products-link">
+            Checkout
+          </Link>
+        </div>
+        </div>
       </div>
-      <h2>Total Price: {totalPrice}$</h2>
-      <Link href="/paintings" data-test-id="products-link">
-        Shop more
-      </Link>
-      <Link href="cart/checkout" data-test-id="products-link">
-        Checkout
-      </Link>
     </main>
   );
 }

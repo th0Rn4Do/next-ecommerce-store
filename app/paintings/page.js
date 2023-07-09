@@ -81,30 +81,32 @@ export default async function PaintingsPage() {
   return (
     <>
       <main>
-        <div className={styles.paintingsArrangement}>
-          currently available paintings:
-          {paintingsWithAmounts.map((painting) => (
-            <div key={`painting-div-${painting.id}`}>
-              <Link href={`/paintings/${painting.id}`}></Link>
-              <br />
-              <div className={styles.paintingFrame}>
-                <Link
-                  href={`/paintings/${painting.id}`}
-                  data-test-id="product-<product id>"
-                >
-                  {painting.paintingName} by {painting.artistName}{' '}
-                </Link>
-                <Image
-                  src={`/images/${painting.paintingName}.png`}
-                  width={256}
-                  height={256}
-                  data-test-id="product-image"
-                  alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
-                />
+        <div>
+          <div className={styles.paintingsArrangement}>
+            currently available paintings:
+            {paintingsWithAmounts.map((painting) => (
+              <div key={`painting-div-${painting.id}`}>
+                <Link href={`/paintings/${painting.id}`}></Link>
+                <br />
+                <div className={styles.paintingFrame}>
+                  <Link
+                    href={`/paintings/${painting.id}`}
+                    data-test-id="product-<product id>"
+                  >
+                    {painting.paintingName} by {painting.artistName}{' '}
+                  </Link>
+                  <Image
+                    src={`/images/${painting.paintingName}.png`}
+                    width={256}
+                    height={256}
+                    data-test-id="product-image"
+                    alt='Remake of the Wedding at Cana - by "Dall-e Veronese" - scenery: Brooklyn Bridge'
+                  />
+                </div>
+                {painting.amount}
               </div>
-              {painting.amount}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </main>
     </>

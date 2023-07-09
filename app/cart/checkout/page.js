@@ -4,6 +4,7 @@ import { getPaintingsSql } from '../../../database/paintings';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import CheckOutForm from './CheckOutForm';
+import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,13 +19,15 @@ const paintingAmounts = !paintingAmountCookie
 export default function CheckOutPage() {
   return (
     <main>
-      Check out
-      <div>
-        <CheckOutForm />
+      <div className={styles.checkoutformorientation}>
+        <h1>Check out</h1>
+        <div>
+          <CheckOutForm />
+        </div>
+        <Link href="cart/checkout/thankyou" data-test-id="products-link">
+          Commit to Buy
+        </Link>
       </div>
-      <Link href="cart/checkout/thankyou" data-test-id="products-link">
-        Commit to Buy
-      </Link>
     </main>
   );
 }
