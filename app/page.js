@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import styles from './layout.module.scss';
+import styles from './page.module.scss';
 
 export default function HomePage() {
   return (
     <main>
       <div className={styles.headingAlignment}>
+        <h1>Artner & Artner</h1>
         Welcome to the Artner & Artner virtual art gallery!
       </div>
       <br />

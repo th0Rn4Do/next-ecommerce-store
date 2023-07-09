@@ -54,7 +54,7 @@ import { getPaintingsSql } from '../../database/paintings';
 // import { paintings } from '../../database/paintings';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import styles from '../paintings/layout.module.scss';
+import styles from './page.module.scss';
 
 // export const dynamic = 'force-dynamic';
 

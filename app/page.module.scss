@@ -15,24 +15,22 @@
 
 .headingAlignment {
   background-color: transparent;
-  position: absolute; /* or fixed */
+  position: flex; /* or fixed */
+  justify-content: center;
   text-align: center;
-  left: 32%;
-  top: 20%;
+  margin-top: 5rem;
 }
 
 .paintingsArrangement {
+  justify-content: center;
   background-color: transparent;
-  position: absolute; /* or fixed */
-  left: 30%;
-
+  /* position: absolute; /* or fixed */
   margin-bottom: 150px;
-  padding: 50px;
   display: flex;
-  grid-gap: 15px;
-  row-gap: 50px;
-  grid-template-columns: repeat(2, 276px);
-  grid-template-rows: repeat(3, 276px);
+  /* grid-gap: 15px; */
+  /* row-gap: 50px; */
+  /* grid-template-columns: repeat(2, 276px); */
+  /* grid-template-rows: repeat(3, 276px); */
 }
 
 .paintingFrame {
