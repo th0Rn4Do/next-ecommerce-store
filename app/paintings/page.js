@@ -56,7 +56,7 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
 
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 export default async function PaintingsPage() {
   //  const paintingsSql = await getPaintingsSql();

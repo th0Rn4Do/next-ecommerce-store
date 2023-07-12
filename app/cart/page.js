@@ -6,6 +6,8 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export default async function CartPage() {
   const paintings = await getPaintingsSql();
   console.log('paintings: ', paintings);
@@ -62,16 +64,16 @@ export default async function CartPage() {
         </div>
         <h2>Total Price: {totalPrice}$</h2>
         <div className={styles.shoppingcartbuttonsorientation}>
-        <div className={styles.shoppingcartbuttons}>
-          <Link href="/paintings" data-test-id="products-link">
-            Shop more
-          </Link>
-        </div>
-        <div className={styles.shoppingcartbuttons}>
-          <Link href="cart/checkout" data-test-id="products-link">
-            Checkout
-          </Link>
-        </div>
+          <div className={styles.shoppingcartbuttons}>
+            <Link href="/paintings" data-test-id="products-link">
+              Shop more
+            </Link>
+          </div>
+          <div className={styles.shoppingcartbuttons}>
+            <Link href="cart/checkout" data-test-id="products-link">
+              Checkout
+            </Link>
+          </div>
         </div>
       </div>
     </main>

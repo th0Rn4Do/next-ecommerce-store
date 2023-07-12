@@ -2,7 +2,9 @@ import 'server-only';
 import { config } from 'dotenv-safe';
 import postgres from 'postgres';
 
-config();
+if (!process.env.FLY_IO) {
+  config();
+}
 
 // export const sql = postgres({
 //   transform: {
